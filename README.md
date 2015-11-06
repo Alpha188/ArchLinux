@@ -246,3 +246,8 @@ in ~/.xinitrc, add this line before exec startxfce4
 # Read More https://wiki.archlinux.org/index.php/VirtualBox#Launch_the_VirtualBox_guest_services
 /usr/bin/VBoxClient-all
 ```
+
+## Step 11 - Install Chromium
+```sh
+$ pacman -S chromium
+```
