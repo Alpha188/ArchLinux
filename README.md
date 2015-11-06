@@ -232,3 +232,17 @@ $ pacman -S xorg-drivers
 ```sh
 $ pacman -S gvfs
 ```
+
+## Step 10 - Virtualbox Guest Additions
+```sh
+$ pacman -S virtualbox-guest-utils
+$ modprobe -a vboxguest vboxsf vboxvideo # try to copy things from host to guest with the clipboard to see if it works
+$ VBoxClient-all
+$ systemctl enable vboxservice
+```
+
+in ~/.xinitrc, add this line before exec startxfce4
+```sh
+# Read More https://wiki.archlinux.org/index.php/VirtualBox#Launch_the_VirtualBox_guest_services
+/usr/bin/VBoxClient-all
+```
