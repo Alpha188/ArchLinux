@@ -251,3 +251,28 @@ in ~/.xinitrc, add this line before exec startxfce4
 ```sh
 $ pacman -S chromium
 ```
+
+## Step 11 - Yaourt
+```sh
+$ vim /etc/pacman.conf
+```
+```sh
+[multilib]
+Include = /etc/pacman.d/mirrorlist # Uncomment
+```
+
+add this on bottom of file
+```sh
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+
+[pnsft-pur]
+SigLevel = Optional TrustAll
+Server = http://downloads.sourceforge.net/project/pnsft-aur/pur/$arch
+```
+
+run these commands
+```sh
+$ pacman -S --refresh yaourt
+```
