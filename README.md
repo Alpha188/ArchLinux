@@ -252,7 +252,7 @@ in ~/.xinitrc, add this line before exec startxfce4
 $ pacman -S chromium
 ```
 
-## Step 11 - Yaourt
+## Step 12 - Yaourt
 ```sh
 $ vim /etc/pacman.conf
 ```
