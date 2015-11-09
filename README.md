@@ -17,18 +17,17 @@ $ ping -c 3 www.google.com
 
 ## Step 2 - Partitioning
 #### type [ef02] on type definition for BIOS partition
-#### type [ef00] on type definition for EFI partition
 TODO: Add Screenshot
-/dev/sda1 - boot
-/dev/sda2 - /
-/dev/sda3 - BIOS
+- /dev/sda1 - boot
+- /dev/sda2 - /
+- /dev/sda3 - BIOS
 
 #### type [ef00] on type definition for EFI partition
 TODO: Add Screenshot
-FreeSpace
-/dev/sda1 - boot
-/dev/sda2 - EFI
-/dev/sda3 - /
+- FreeSpace
+- /dev/sda1 - boot
+- /dev/sda2 - EFI
+- /dev/sda3 - /
 
 ## Step 3 - Formatting
 #### BIOS
