@@ -17,23 +17,49 @@ $ ping -c 3 www.google.com
 
 ## Step 2 - Partitioning
 #### type [ef02] on type definition for BIOS partition
+#### type [ef00] on type definition for EFI partition
 TODO: Add Screenshot
 /dev/sda1 - boot
 /dev/sda2 - /
 /dev/sda3 - BIOS
 
+#### type [ef00] on type definition for EFI partition
+TODO: Add Screenshot
+FreeSpace
+/dev/sda1 - boot
+/dev/sda2 - EFI
+/dev/sda3 - /
+
 ## Step 3 - Formatting
+#### BIOS
 ```sh
 $ mkfs.ext4 /dev/sda1
 $ mkfs.ext4 /dev/sda2
 $ mkfs.ext4 /dev/sda3
 ```
 
+#### EFI
+```sh
+$ mkfs.vfat -F32 /dev/sda3
+$ mkfs.ext4 /dev/sda1
+$ mkfs.ext4 /dev/sda2
+```
+
 ## Step 4 - Mounting
+#### BIOS
 ```sh
 $ mount /dev/sda2 /mnt
 $ mkdir -p /mnt/boot
 $ mount /dev/sda1 /mnt/boot
+```
+
+#### EFI
+```sh
+$ mount /dev/sda3 /mnt
+$ mkdir -p /mnt/boot
+$ mount /dev/sda1 /mnt/boot
+$ mkdir -p /mnt/boot/efi
+$ mount /dev/sda2 /mnt/boot/efi
 ```
 
 ## Step 5 - MirrorList
@@ -43,8 +69,14 @@ $ vim /etc/pacman.d/mirrorlist
 #### Find your country, and move it to the top of the list
 
 ## Step 6 - Install Base
+#### BIOS
 ```sh
 $ pacstrap /mnt base base-devel vim
+```
+
+#### EFI
+```sh
+$ pacstrap /mnt base base-devel vim efibootmgr
 ```
 
 ## Step 7 - fstab
@@ -91,9 +123,16 @@ $ passwd
 ```
 
 ## Step 15 - BootLoader
+#### BIOS
 ```sh
 $ pacman -S grub
 $ grub-install --recheck /dev/sda
+```
+
+#### EFI
+```sh
+$ pacman -S grub
+$ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck
 ```
 
 ## Step 16 - Setup GRUB main config
@@ -174,30 +213,6 @@ $ vim ~/.xinitrc
 ```
 
 replace this
-```sh
-# start some nice programs
-
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
-```
-
-to this
-```sh
-# start some nice programs
-
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?* ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
-```
-
-also, replace this
 ```sh
 twm &
 xclock -geometry 50x50-1+1 &
