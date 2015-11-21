@@ -73,6 +73,8 @@ $ vim /etc/pacman.d/mirrorlist
 $ pacstrap /mnt base base-devel vim
 ```
 
+You'll be prompted three times, just press enter three times.
+
 #### EFI
 ```sh
 $ pacstrap /mnt base base-devel vim efibootmgr
