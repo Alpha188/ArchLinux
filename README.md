@@ -1,4 +1,5 @@
-[TOC]
+[Toc]
+
 # WIP - ArchLinux minimum Installation
 my minimum Arch Linux Installution
 
@@ -301,6 +302,6 @@ $ pacman -S fcitx fcitx-googlepinyin fcitx-configtool
  - Use .xinitrc if you are using startx or Slim.
 ```sh
 export GTK_IM_MODULE=fcitx
- export QT_IM_MODULE=fcitx
- export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 ```
