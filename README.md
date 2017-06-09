@@ -1,5 +1,3 @@
-[Toc]
-
 # WIP - ArchLinux minimum Installation
 my minimum Arch Linux Installution
 
