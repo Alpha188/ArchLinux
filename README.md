@@ -1,3 +1,4 @@
+[TOC]
 # WIP - ArchLinux minimum Installation
 my minimum Arch Linux Installution
 
@@ -291,4 +292,15 @@ Server = http://downloads.sourceforge.net/project/pnsft-aur/pur/$arch
 run these commands
 ```sh
 $ pacman -S --refresh yaourt
+```
+## Step13 - fcitx
+```sh
+$ pacman -S fcitx fcitx-googlepinyin fcitx-configtool
+```
+ - Use .xprofile if you are using KDM, GDM, LightDM or SDDM.
+ - Use .xinitrc if you are using startx or Slim.
+```sh
+export GTK_IM_MODULE=fcitx
+ export QT_IM_MODULE=fcitx
+ export XMODIFIERS=@im=fcitx
 ```
