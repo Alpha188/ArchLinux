@@ -1,5 +1,3 @@
-# WIP - ArchLinux minimum Installation
-my minimum Arch Linux Installution
 
 This time, I'll install ArchLinux inside of VirtualBox ;)
 
@@ -303,3 +301,12 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 ```
+software list
+ > conky       -- system monitor
+ > compton     -- compositor
+ > pcmanfm     -- file manager
+ > nitrogen    -- background setter
+ > stardict    -- dictionary
+ > viewniorman -- image viewer
+ > chromium    -- web browser
+ > urxvt       -- terminal
