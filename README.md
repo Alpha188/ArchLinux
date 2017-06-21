@@ -301,9 +301,9 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 ```
-software list
+##software list
  ```sh
- conky      -- system monitor
+  conky      -- system monitor
   compton     -- compositor
   pcmanfm     -- file manager
   nitrogen    -- background setter
