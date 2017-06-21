@@ -302,7 +302,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 ```
 software list
- > conky      -- system monitor
+ ```sh
+ conky      -- system monitor
   compton     -- compositor
   pcmanfm     -- file manager
   nitrogen    -- background setter
@@ -310,3 +311,4 @@ software list
   viewniorman -- image viewer
   chromium    -- web browser
   urxvt       -- terminal
+ ```
